@@ -17,11 +17,17 @@ namespace EliteChess.Managers
         [SerializeField] List<GameObject> Center = null;
         [SerializeField] List<GameObject> AllTiles = null;
 
+        [SerializeField] Text ScoreRed = null;
+        [SerializeField] Text ScoreBlue = null;
+        [SerializeField] Text ScoreYellow = null;
+        [SerializeField] Text ScoreGreen = null;
+        [SerializeField] Text UIText = null;
+
         Color WhiteTile = new Color(1f, 0.80784313725f, 0.61960784313f);
         Color BlackTile = new Color(0.81960784313f, 0.54509803921f, 0.27843137254f);
         bool colorFlip = false;
 
-        private void Start()
+        private void Awake()
         {
             for (int i = 0; i < 16; i++)
             {
@@ -95,6 +101,11 @@ namespace EliteChess.Managers
                 default:
                     return Color.white;
             }
+        }
+
+        internal void RefreshUI(Player nowPlaying)
+        {
+            UIText.text = $"Turn: {nowPlaying}";
         }
     }
 }

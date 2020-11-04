@@ -1,4 +1,5 @@
 ﻿using EliteChess.Enums;
+using System;
 
 namespace EliteChess.Entities
 {

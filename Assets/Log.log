@@ -27,3 +27,231 @@
 [01/11/2020 18:12:01 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,4)
 [01/11/2020 18:12:01 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,6)
 [01/11/2020 18:12:02 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,7)
+[04/11/2020 19:43:01 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,15)
+[04/11/2020 19:43:10 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,14)
+[04/11/2020 19:43:12 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,13)
+[04/11/2020 19:43:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,13)
+[04/11/2020 19:43:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,15)
+[04/11/2020 19:44:16 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,13)
+[04/11/2020 19:44:17 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,14)
+[04/11/2020 19:44:31 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,0)
+[04/11/2020 19:44:40 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,1)
+[04/11/2020 19:44:42 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,2)
+[04/11/2020 19:45:02 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,0)
+[04/11/2020 19:45:03 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,2)
+[04/11/2020 19:45:12 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,1)
+[04/11/2020 19:45:14 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,2)
+[04/11/2020 19:45:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,0)
+[04/11/2020 19:45:53 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,0)
+[04/11/2020 21:24:55 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (11,2)
+[04/11/2020 21:24:55 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (11,2)
+[04/11/2020 21:24:57 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
+[04/11/2020 21:24:57 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,7)
+[04/11/2020 21:24:57 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 8,8 to 7,7
+[04/11/2020 21:24:59 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,7)
+[04/11/2020 21:25:00 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,6)
+[04/11/2020 21:25:46 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,4)
+[04/11/2020 21:25:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,4)
+[04/11/2020 21:25:48 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
+[04/11/2020 21:25:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (5,8)
+[04/11/2020 21:25:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 8,8 to 5,8
+[04/11/2020 21:30:11 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
+[04/11/2020 21:30:11 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (5,8)
+[04/11/2020 21:30:11 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 8,8 to 5,8
+[04/11/2020 21:30:13 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (5,8)
+[04/11/2020 21:30:14 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,11)
+[04/11/2020 21:30:14 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 5,8 to 7,11
+[04/11/2020 21:30:14 (UTC)] - [Log] - [GameManager.cs] - [QueenCanMove]:	cannot move queen from (5,8) to (7,11)
+[04/11/2020 21:30:19 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (5,8)
+[04/11/2020 21:30:19 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,10)
+[04/11/2020 21:30:19 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 5,8 to 6,10
+[04/11/2020 21:30:19 (UTC)] - [Log] - [GameManager.cs] - [QueenCanMove]:	cannot move queen from (5,8) to (6,10)
+[04/11/2020 21:30:20 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (5,8)
+[04/11/2020 21:30:20 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,9)
+[04/11/2020 21:30:20 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 5,8 to 6,9
+[04/11/2020 21:30:21 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,9)
+[04/11/2020 21:30:22 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,7)
+[04/11/2020 21:30:22 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 6,9 to 8,7
+[04/11/2020 21:30:23 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,7)
+[04/11/2020 21:30:23 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,8)
+[04/11/2020 21:30:23 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 8,7 to 7,8
+[04/11/2020 21:30:24 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,8)
+[04/11/2020 21:30:25 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,8)
+[04/11/2020 21:30:25 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 7,8 to 6,8
+[04/11/2020 21:30:26 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,8)
+[04/11/2020 21:30:26 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (5,7)
+[04/11/2020 21:30:26 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 6,8 to 5,7
+[04/11/2020 21:30:26 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (5,7)
+[04/11/2020 21:30:27 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,6)
+[04/11/2020 21:30:27 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 5,7 to 6,6
+[04/11/2020 21:30:28 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,6)
+[04/11/2020 21:30:28 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,5)
+[04/11/2020 21:30:28 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 6,6 to 6,5
+[04/11/2020 21:30:28 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,5)
+[04/11/2020 21:30:29 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,5)
+[04/11/2020 21:30:29 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 6,5 to 7,5
+[04/11/2020 21:30:29 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,5)
+[04/11/2020 21:30:30 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,6)
+[04/11/2020 21:30:31 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,5)
+[04/11/2020 21:30:31 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,6)
+[04/11/2020 21:30:31 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 7,5 to 7,6
+[04/11/2020 21:30:32 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (6,6)
+[04/11/2020 21:30:32 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,6)
+[04/11/2020 21:30:33 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,6)
+[04/11/2020 21:30:33 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,6)
+[04/11/2020 21:30:34 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,6)
+[04/11/2020 21:30:34 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (9,6)
+[04/11/2020 21:30:34 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 7,6 to 9,6
+[04/11/2020 21:30:35 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (9,6)
+[04/11/2020 21:30:36 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,6)
+[04/11/2020 21:30:36 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 9,6 to 14,6
+[04/11/2020 21:30:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,6)
+[04/11/2020 21:30:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,0)
+[04/11/2020 21:30:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 14,6 to 14,0
+[04/11/2020 21:30:37 (UTC)] - [Log] - [GameManager.cs] - [IsBlocked]:	Bishop (14,2) in the way!
+[04/11/2020 21:30:38 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,6)
+[04/11/2020 21:30:39 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,2)
+[04/11/2020 21:30:39 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 14,6 to 14,2
+[04/11/2020 21:30:39 (UTC)] - [Log] - [GameManager.cs] - [MoveQueen]:	Red Queen eats Green Bishop
+[04/11/2020 21:30:41 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,2)
+[04/11/2020 21:30:41 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,2)
+[04/11/2020 21:30:41 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 14,2 to 13,2
+[04/11/2020 21:30:41 (UTC)] - [Log] - [GameManager.cs] - [MoveQueen]:	Red Queen eats Green Night
+[04/11/2020 21:30:42 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,2)
+[04/11/2020 21:30:42 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,1)
+[04/11/2020 21:30:42 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 13,2 to 13,1
+[04/11/2020 21:30:42 (UTC)] - [Log] - [GameManager.cs] - [MoveQueen]:	Red Queen eats Green Bishop
+[04/11/2020 21:30:43 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,1)
+[04/11/2020 21:30:43 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (9,1)
+[04/11/2020 21:30:43 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 13,1 to 9,1
+[04/11/2020 21:30:44 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (9,1)
+[04/11/2020 21:30:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,1)
+[04/11/2020 21:30:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 9,1 to 14,1
+[04/11/2020 21:30:45 (UTC)] - [Log] - [GameManager.cs] - [MoveQueen]:	Red Queen eats Green Night
+[04/11/2020 21:30:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,1)
+[04/11/2020 21:30:46 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,1)
+[04/11/2020 21:30:46 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 14,1 to 15,1
+[04/11/2020 21:30:46 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,1)
+[04/11/2020 21:30:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,7)
+[04/11/2020 21:30:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 15,1 to 15,7
+[04/11/2020 21:30:47 (UTC)] - [Log] - [GameManager.cs] - [IsBlocked]:	Rook (15,2) in the way!
+[04/11/2020 21:30:48 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,1)
+[04/11/2020 21:30:48 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,3)
+[04/11/2020 21:30:48 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 15,1 to 15,3
+[04/11/2020 21:30:48 (UTC)] - [Log] - [GameManager.cs] - [IsBlocked]:	Rook (15,2) in the way!
+[04/11/2020 21:30:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,1)
+[04/11/2020 21:30:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,2)
+[04/11/2020 21:30:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 15,1 to 14,2
+[04/11/2020 21:30:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,2)
+[04/11/2020 21:30:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,1)
+[04/11/2020 21:30:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 14,2 to 15,1
+[04/11/2020 21:30:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,1)
+[04/11/2020 21:30:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (12,1)
+[04/11/2020 21:30:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 15,1 to 12,1
+[04/11/2020 21:30:52 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (12,1)
+[04/11/2020 21:30:53 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,1)
+[04/11/2020 21:30:53 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 12,1 to 2,1
+[04/11/2020 21:30:53 (UTC)] - [Log] - [GameManager.cs] - [MoveQueen]:	Red Queen eats Red Bishop
+[04/11/2020 21:30:54 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,1)
+[04/11/2020 21:30:54 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,1)
+[04/11/2020 21:30:54 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 2,1 to 1,1
+[04/11/2020 21:30:54 (UTC)] - [Log] - [GameManager.cs] - [MoveQueen]:	Red Queen eats Red Night
+[04/11/2020 21:33:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:38 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,3)
+[04/11/2020 21:33:38 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 0,3
+[04/11/2020 21:33:38 (UTC)] - [Log] - [GameManager.cs] - [IsBlocked]:	Rook (0,2) in the way!
+[04/11/2020 21:33:38 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:39 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,2)
+[04/11/2020 21:33:39 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 0,2
+[04/11/2020 21:33:39 (UTC)] - [Log] - [GameManager.cs] - [IsBlocked]:	Rook (0,2) in the way!
+[04/11/2020 21:33:41 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:42 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,1)
+[04/11/2020 21:33:42 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 1,1
+[04/11/2020 21:33:42 (UTC)] - [Log] - [GameManager.cs] - [IsBlocked]:	Night (1,1) in the way!
+[04/11/2020 21:33:42 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:43 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,1)
+[04/11/2020 21:33:43 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 0,1
+[04/11/2020 21:33:43 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,1)
+[04/11/2020 21:33:43 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:43 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,1 to 0,0
+[04/11/2020 21:33:44 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:44 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,0)
+[04/11/2020 21:33:44 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 1,0
+[04/11/2020 21:33:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,0)
+[04/11/2020 21:33:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,0)
+[04/11/2020 21:33:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 1,0 to 1,0
+[04/11/2020 21:33:45 (UTC)] - [Log] - [GameManager.cs] - [QueenCanMove]:	cannot move queen from (1,0) to (1,0)
+[04/11/2020 21:33:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:46 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,0)
+[04/11/2020 21:33:46 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:46 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 1,0 to 0,0
+[04/11/2020 21:33:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,1)
+[04/11/2020 21:33:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 1,1
+[04/11/2020 21:33:47 (UTC)] - [Log] - [GameManager.cs] - [IsBlocked]:	Night (1,1) in the way!
+[04/11/2020 21:33:48 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:48 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,0)
+[04/11/2020 21:33:48 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 1,0
+[04/11/2020 21:33:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,0)
+[04/11/2020 21:33:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,0)
+[04/11/2020 21:33:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 1,0 to 0,0
+[04/11/2020 21:33:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:33:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,1)
+[04/11/2020 21:33:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 1,1
+[04/11/2020 21:33:51 (UTC)] - [Log] - [GameManager.cs] - [IsBlocked]:	Night (1,1) in the way!
+[04/11/2020 21:44:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:44:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,4)
+[04/11/2020 21:44:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 0,4
+[04/11/2020 21:44:47 (UTC)] - [Log] - [GameManager.cs] - [IsBlocked]:	Rook (0,2) in the way!
+[04/11/2020 21:44:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:44:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,2)
+[04/11/2020 21:44:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 0,2
+[04/11/2020 21:44:49 (UTC)] - [Log] - [GameManager.cs] - [IsBlocked]:	Rook (0,2) in the way!
+[04/11/2020 21:44:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,2)
+[04/11/2020 21:44:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,3)
+[04/11/2020 21:44:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,2 to 0,3
+[04/11/2020 21:44:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:44:53 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,1)
+[04/11/2020 21:44:53 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 0,1
+[04/11/2020 21:44:55 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,1)
+[04/11/2020 21:44:56 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:44:56 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,1 to 0,0
+[04/11/2020 21:46:15 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,15)
+[04/11/2020 21:46:17 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,12)
+[04/11/2020 21:46:17 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,15 to 0,12
+[04/11/2020 21:46:17 (UTC)] - [Log] - [GameManager.cs] - [MovePiece]:	this is not yours !
+[04/11/2020 21:46:21 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,15)
+[04/11/2020 21:46:21 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,14)
+[04/11/2020 21:46:21 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,15 to 0,14
+[04/11/2020 21:46:21 (UTC)] - [Log] - [GameManager.cs] - [MovePiece]:	this is not yours !
+[04/11/2020 21:46:24 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,15)
+[04/11/2020 21:46:25 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,14)
+[04/11/2020 21:46:25 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,15 to 0,14
+[04/11/2020 21:46:25 (UTC)] - [Log] - [GameManager.cs] - [MovePiece]:	this is not yours !
+[04/11/2020 21:46:26 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,15)
+[04/11/2020 21:46:26 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,15)
+[04/11/2020 21:46:26 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,15 to 1,15
+[04/11/2020 21:46:26 (UTC)] - [Log] - [GameManager.cs] - [MovePiece]:	this is not yours !
+[04/11/2020 21:46:28 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,15)
+[04/11/2020 21:46:28 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,15)
+[04/11/2020 21:46:28 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 15,15 to 14,15
+[04/11/2020 21:46:30 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,15)
+[04/11/2020 21:46:31 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,15)
+[04/11/2020 21:46:31 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 14,15 to 15,15
+[04/11/2020 21:46:31 (UTC)] - [Log] - [GameManager.cs] - [MovePiece]:	this is not yours !
+[04/11/2020 21:46:31 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,15)
+[04/11/2020 21:46:32 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (11,14)
+[04/11/2020 21:46:32 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 14,15 to 11,14
+[04/11/2020 21:46:32 (UTC)] - [Log] - [GameManager.cs] - [MovePiece]:	this is not yours !
+[04/11/2020 21:46:33 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,0)
+[04/11/2020 21:46:33 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,1)
+[04/11/2020 21:46:33 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 15,0 to 15,1
+[04/11/2020 21:46:35 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,15)
+[04/11/2020 21:46:35 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,15)
+[04/11/2020 21:46:35 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,15 to 1,15
+[04/11/2020 21:46:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,0)
+[04/11/2020 21:46:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,1)
+[04/11/2020 21:46:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,0 to 0,1
