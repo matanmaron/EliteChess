@@ -1,6 +1,9 @@
 ﻿using EliteChess.Entities;
 using EliteChess.Enums;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,8 +14,16 @@ namespace EliteChess.Managers
         [SerializeField] UIManager _UIManager;
         internal Settings settings = null;
         Piece[,] Pieces = new Piece[16, 16];
+        List<Piece> Centers = new List<Piece>();
         Tuple<int, int> Selected = null;
         Player NowPlaying = Player.None;
+
+        int ScoreRed = 0;
+        int ScoreBlue = 0;
+        int ScoreGreen = 0;
+        int ScoreYellow = 0;
+
+        int Round = 0;
 
         public static GameManager Instance { get; private set; } //singleton
         private void Awake()
@@ -43,7 +54,7 @@ namespace EliteChess.Managers
                 }
                 Selected = null;
             }
-            RefreshBoard();
+            RefreshScreen();
         }
 
         private void MovePiece(Piece piece, int fromX, int fromY, int toX, int toY)
@@ -58,22 +69,83 @@ namespace EliteChess.Managers
                 case PieceType.Queen:
                     if (QueenCanMove(fromX, fromY, toX, toY))
                     {
-                        MoveQueen(fromX, fromY, toX, toY);
+                        Move(fromX, fromY, toX, toY);
                     }
                     break;
                 case PieceType.Bishop:
+                    if (BishopCanMove(fromX, fromY, toX, toY))
+                    {
+                        Move(fromX, fromY, toX, toY);
+                    }
                     break;
                 case PieceType.Rook:
+                    if (RookCanMove(fromX, fromY, toX, toY))
+                    {
+                        Move(fromX, fromY, toX, toY);
+                    }
                     break;
-                case PieceType.Night:
+                case PieceType.Knight:
+                    if (KnightCanMove(fromX, fromY, toX, toY))
+                    {
+                        Move(fromX, fromY, toX, toY);
+                    }
                     break;
                 default:
-                    LogManager.Log("error in piece...", LogType.Error);
+                    LogManager.Log("error in piece", LogType.Error);
                     break;
             }
         }
 
-        private void MoveQueen(int fromX, int fromY, int toX, int toY)
+        private bool KnightCanMove(int fromX, int fromY, int toX, int toY)
+        {
+            if (Mathf.Abs((fromX - toX) * (fromY - toY)) == 2)
+            {
+                return true;
+            }
+            else
+            {
+                LogManager.Log($"cannot move rook from ({fromX},{fromY}) to ({toX},{toY})");
+            }
+            return false;
+        }
+
+        private bool RookCanMove(int fromX, int fromY, int toX, int toY)
+        {
+            var dx = Mathf.Abs(toX - fromX);
+            var dy = Mathf.Abs(toY - fromY);
+            if ((dy == 0 && dx != 0) || (dx == 0 && dy != 0))
+            {
+                if (!IsBlocked(fromX, fromY, toX, toY))
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                LogManager.Log($"cannot move rook from ({fromX},{fromY}) to ({toX},{toY})");
+            }
+            return false;
+        }
+
+        private bool BishopCanMove(int fromX, int fromY, int toX, int toY)
+        {
+            var dx = Mathf.Abs(toX - fromX);
+            var dy = Mathf.Abs(toY - fromY);
+            if (dx == dy && dx != 0 && dy != 0)
+            {
+                if (!IsBlocked(fromX, fromY, toX, toY))
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                LogManager.Log($"cannot move bishop from ({fromX},{fromY}) to ({toX},{toY})");
+            }
+            return false;
+        }
+
+        private void Move(int fromX, int fromY, int toX, int toY)
         {
             if (Pieces[toX,toY]._type != PieceType.None)
             {
@@ -81,13 +153,70 @@ namespace EliteChess.Managers
             }
             Pieces[toX, toY]._player = Pieces[fromX, fromY]._player;
             Pieces[toX, toY]._type = Pieces[fromX, fromY]._type;
-            Pieces[fromX, fromY]._player = Player.None;
+            if (Pieces[toX, toY].IsCenter)
+            {
+                if (CenterIsEmptyOrCurrentPlayer())
+                {
+                    SetCenterToPlayer();
+                }
+                else
+                {
+                    foreach (var c in Centers)
+                    {
+                        c._player = Player.None;
+                    }
+                }
+            }
+            if (!Pieces[fromX, fromY].IsCenter)
+            {
+                Pieces[fromX, fromY]._player = Player.None;
+            }
             Pieces[fromX, fromY]._type = PieceType.None;
             NowPlaying = NextTurnPlayer();
         }
 
+        private void SetCenterToPlayer()
+        {
+            foreach (var c in Centers)
+            {
+                c._player = NowPlaying;
+            }
+        }
+
+        private bool CenterIsEmptyOrCurrentPlayer()
+        {
+            if (Centers.Count(x => x._player == NowPlaying) == Centers.Count())
+            {
+                return true;
+            }
+            return Centers.Count(x => x._player == Player.None) == Centers.Count();
+        }
+
+        private void CalcScore()
+        {
+            switch (Centers.First()._player)
+            {
+                case Player.Red:
+                    ScoreRed++;
+                    break;
+                case Player.Blue:
+                    ScoreBlue++;
+                    break;
+                case Player.Green:
+                    ScoreGreen++;
+                    break;
+                case Player.Yellow:
+                    ScoreYellow++;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         private Player NextTurnPlayer()
         {
+            Round++;
+            CalcScore();
             switch (NowPlaying)
             {
                 case Player.None:
@@ -222,10 +351,11 @@ namespace EliteChess.Managers
             return false;
         }
 
-        private void RefreshBoard()
+        private void RefreshScreen()
         {
             _UIManager.RefreshBoard(Pieces, Selected);
             _UIManager.RefreshUI(NowPlaying);
+            _UIManager.RefreshScore(ScoreRed, ScoreBlue, ScoreYellow, ScoreGreen);
         }
 
         private void Start()
@@ -244,7 +374,7 @@ namespace EliteChess.Managers
             }
             SetPlayers();
             NowPlaying = NextTurnPlayer();
-            RefreshBoard();
+            RefreshScreen();
         }
 
         private void SetPlayers()
@@ -260,9 +390,9 @@ namespace EliteChess.Managers
             Pieces[2, 1]._player = Player.Red;
             Pieces[2, 1]._type = PieceType.Bishop;
             Pieces[1, 1]._player = Player.Red;
-            Pieces[1, 1]._type = PieceType.Night;
+            Pieces[1, 1]._type = PieceType.Knight;
             Pieces[2, 2]._player = Player.Red;
-            Pieces[2, 2]._type = PieceType.Night;
+            Pieces[2, 2]._type = PieceType.Knight;
 
             Pieces[15, 15]._player = Player.Blue;
             Pieces[15, 15]._type = PieceType.Queen;
@@ -275,9 +405,9 @@ namespace EliteChess.Managers
             Pieces[14, 13]._player = Player.Blue;
             Pieces[14, 13]._type = PieceType.Bishop;
             Pieces[14, 14]._player = Player.Blue;
-            Pieces[14, 14]._type = PieceType.Night;
+            Pieces[14, 14]._type = PieceType.Knight;
             Pieces[13, 13]._player = Player.Blue;
-            Pieces[13, 13]._type = PieceType.Night;
+            Pieces[13, 13]._type = PieceType.Knight;
 
             Pieces[0, 15]._player = Player.Yellow;
             Pieces[0, 15]._type = PieceType.Queen;
@@ -290,9 +420,9 @@ namespace EliteChess.Managers
             Pieces[1, 13]._player = Player.Yellow;
             Pieces[1, 13]._type = PieceType.Bishop;
             Pieces[1, 14]._player = Player.Yellow;
-            Pieces[1, 14]._type = PieceType.Night;
+            Pieces[1, 14]._type = PieceType.Knight;
             Pieces[2, 13]._player = Player.Yellow;
-            Pieces[2, 13]._type = PieceType.Night;
+            Pieces[2, 13]._type = PieceType.Knight;
 
             Pieces[15, 0]._player = Player.Green;
             Pieces[15, 0]._type = PieceType.Queen;
@@ -305,9 +435,18 @@ namespace EliteChess.Managers
             Pieces[14, 2]._player = Player.Green;
             Pieces[14, 2]._type = PieceType.Bishop;
             Pieces[14, 1]._player = Player.Green;
-            Pieces[14, 1]._type = PieceType.Night;
+            Pieces[14, 1]._type = PieceType.Knight;
             Pieces[13, 2]._player = Player.Green;
-            Pieces[13, 2]._type = PieceType.Night;
+            Pieces[13, 2]._type = PieceType.Knight;
+
+            Pieces[7, 7].IsCenter = true;
+            Pieces[7, 8].IsCenter = true;
+            Pieces[8, 7].IsCenter = true;
+            Pieces[8, 8].IsCenter = true;
+            Centers.Add(Pieces[7, 7]);
+            Centers.Add(Pieces[7, 8]);
+            Centers.Add(Pieces[8, 7]);
+            Centers.Add(Pieces[8, 8]);
         }
     }
 }

@@ -50,6 +50,10 @@ namespace EliteChess.Managers
                 for (int j = 0; j < 16; j++)
                 {
                     AllTiles[16 * i + j].GetComponent<Image>().color = ChangeColor();
+                    if (pieces[i, j].IsCenter)
+                    {
+                        AllTiles[16 * i + j].GetComponent<Image>().color = GetPlayerColor(pieces[i, j]._player);
+                    }
 
                     if (pieces[i,j]._player != Player.None)
                     {
@@ -106,6 +110,14 @@ namespace EliteChess.Managers
         internal void RefreshUI(Player nowPlaying)
         {
             UIText.text = $"Turn: {nowPlaying}";
+        }
+
+        internal void RefreshScore(int _scoreRed, int _scoreBlue, int _scoreYellow, int _scoreGreen)
+        {
+            ScoreRed.text = _scoreRed.ToString();
+            ScoreBlue.text = _scoreBlue.ToString();
+            ScoreYellow.text = _scoreYellow.ToString();
+            ScoreGreen.text = _scoreGreen.ToString();
         }
     }
 }

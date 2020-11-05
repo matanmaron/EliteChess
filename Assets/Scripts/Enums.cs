@@ -15,6 +15,6 @@
         Queen,
         Bishop,
         Rook,
-        Night
+        Knight
     }
 }
