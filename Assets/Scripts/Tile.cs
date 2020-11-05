@@ -7,10 +7,6 @@ public class Tile : MonoBehaviour
     public int pos_i = -1;
     public int pos_j = -1;
 
-    private void Start()
-    {
-        gameObject.GetComponent<Button>().onClick.AddListener(SendTile);
-    }
     public void SendTile()
     {
         pos_i = 0;

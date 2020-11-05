@@ -12,7 +12,6 @@ namespace EliteChess.Managers
     {
         [SerializeField] Color NeutralHalo = Color.white;
         
-        [SerializeField] List<GameObject> Center = null;
         [SerializeField] List<GameObject> AllTiles = null;
 
         [SerializeField] Text ScoreRed = null;
