@@ -292,3 +292,99 @@
 [05/11/2020 07:20:57 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,8)
 [05/11/2020 07:20:58 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
 [05/11/2020 07:20:58 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,7)
+[05/11/2020 09:28:30 (UTC)] - [Log] - [GameManager.cs] - [GetNextPlayer]:	Game Over
+[05/11/2020 09:28:39 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,2)
+[05/11/2020 09:28:40 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,3)
+[05/11/2020 09:28:40 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 2,2 to 2,3
+[05/11/2020 09:28:40 (UTC)] - [Log] - [GameManager.cs] - [MovePiece]:	this is not yours !
+[05/11/2020 09:28:48 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,1)
+[05/11/2020 09:28:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (12,1)
+[05/11/2020 09:28:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 13,1 to 12,1
+[05/11/2020 09:28:49 (UTC)] - [Log] - [GameManager.cs] - [MovePiece]:	this is not yours !
+[05/11/2020 09:28:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,13)
+[05/11/2020 09:28:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (12,13)
+[05/11/2020 09:28:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 13,13 to 12,13
+[05/11/2020 09:28:51 (UTC)] - [Log] - [GameManager.cs] - [MovePiece]:	this is not yours !
+[05/11/2020 09:28:52 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,13)
+[05/11/2020 09:28:52 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (3,13)
+[05/11/2020 09:28:53 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 2,13 to 3,13
+[05/11/2020 09:28:53 (UTC)] - [Log] - [GameManager.cs] - [MovePiece]:	this is not yours !
+[05/11/2020 09:33:01 (UTC)] - [Log] - [GameManager.cs] - [GetNextPlayer]:	Game Over
+[05/11/2020 09:33:21 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,2)
+[05/11/2020 09:33:24 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (5,7)
+[05/11/2020 09:33:24 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,2 to 5,7
+[05/11/2020 09:33:24 (UTC)] - [Log] - [GameManager.cs] - [RookCanMove]:	cannot move rook from (0,2) to (5,7)
+[05/11/2020 09:33:25 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,2)
+[05/11/2020 09:33:27 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,8)
+[05/11/2020 09:33:27 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,2 to 0,8
+[05/11/2020 09:33:31 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,6)
+[05/11/2020 09:33:34 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,6)
+[05/11/2020 09:33:34 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,6)
+[05/11/2020 09:33:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,8)
+[05/11/2020 09:33:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (4,8)
+[05/11/2020 09:33:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,8 to 4,8
+[05/11/2020 10:57:33 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,2)
+[05/11/2020 10:57:34 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,8)
+[05/11/2020 10:57:34 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,2 to 0,8
+[05/11/2020 10:57:59 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,2)
+[05/11/2020 10:58:00 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,7)
+[05/11/2020 10:58:00 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,2 to 0,7
+[05/11/2020 11:07:44 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,2)
+[05/11/2020 11:07:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,5)
+[05/11/2020 11:07:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,2 to 0,5
+[05/11/2020 11:07:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,13)
+[05/11/2020 11:07:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (11,12)
+[05/11/2020 11:07:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 13,13 to 11,12
+[05/11/2020 11:07:56 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,2)
+[05/11/2020 11:07:57 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (15,7)
+[05/11/2020 11:07:57 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 15,2 to 15,7
+[05/11/2020 11:09:01 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,14)
+[05/11/2020 11:09:02 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
+[05/11/2020 11:09:02 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 2,14 to 8,8
+[05/11/2020 11:09:40 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,14)
+[05/11/2020 11:09:41 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,8)
+[05/11/2020 11:09:41 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 13,14 to 7,8
+[05/11/2020 11:13:26 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,14)
+[05/11/2020 11:13:26 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
+[05/11/2020 11:13:26 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 2,14 to 8,8
+[05/11/2020 11:15:29 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,14)
+[05/11/2020 11:15:30 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
+[05/11/2020 11:15:30 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 2,14 to 8,8
+[05/11/2020 11:17:23 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,14)
+[05/11/2020 11:17:24 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,8)
+[05/11/2020 11:17:24 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 13,14 to 7,8
+[05/11/2020 11:17:29 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,2)
+[05/11/2020 11:17:30 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
+[05/11/2020 11:17:30 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 14,2 to 8,8
+[05/11/2020 11:17:40 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,13)
+[05/11/2020 11:17:41 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,7)
+[05/11/2020 11:17:41 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 1,13 to 7,7
+[05/11/2020 11:17:46 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,2)
+[05/11/2020 11:17:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (0,3)
+[05/11/2020 11:17:47 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 0,2 to 0,3
+[05/11/2020 11:17:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (4,4)
+[05/11/2020 11:17:50 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (4,4)
+[05/11/2020 11:17:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (4,5)
+[05/11/2020 11:17:51 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,5)
+[05/11/2020 11:18:38 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,14)
+[05/11/2020 11:18:38 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
+[05/11/2020 11:18:38 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 2,14 to 8,8
+[05/11/2020 11:18:45 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,1)
+[05/11/2020 11:18:46 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,7)
+[05/11/2020 11:18:46 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 2,1 to 8,7
+[05/11/2020 11:19:31 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (2,14)
+[05/11/2020 11:19:32 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
+[05/11/2020 11:19:32 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 2,14 to 8,8
+[05/11/2020 11:19:35 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,2)
+[05/11/2020 11:19:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,8)
+[05/11/2020 11:19:37 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 1,2 to 7,8
+[05/11/2020 11:23:48 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (1,2)
+[05/11/2020 11:23:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,8)
+[05/11/2020 11:23:49 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 1,2 to 7,8
+[05/11/2020 11:24:12 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (13,14)
+[05/11/2020 11:24:12 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (7,8)
+[05/11/2020 11:24:12 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 13,14 to 7,8
+[05/11/2020 11:24:12 (UTC)] - [Log] - [GameManager.cs] - [Move]:	Blue Bishop eats Red Bishop
+[05/11/2020 11:24:35 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (14,2)
+[05/11/2020 11:24:36 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	clicked (8,8)
+[05/11/2020 11:24:36 (UTC)] - [Log] - [GameManager.cs] - [TileClicked]:	move 14,2 to 8,8

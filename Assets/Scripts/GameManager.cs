@@ -3,7 +3,6 @@ using EliteChess.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,10 +11,12 @@ namespace EliteChess.Managers
     public class GameManager : MonoBehaviour
     {
         [SerializeField] UIManager _UIManager;
+        [SerializeField] int BoarderTime = 5;
         internal Settings settings = null;
         Piece[,] Pieces = new Piece[16, 16];
         List<Piece> Centers = new List<Piece>();
         Tuple<int, int> Selected = null;
+        Tuple<int, int> boardersPosition = new Tuple<int, int>(0,0);
         Player NowPlaying = Player.None;
 
         int ScoreRed = 0;
@@ -151,8 +152,6 @@ namespace EliteChess.Managers
             {
                 LogManager.Log($"{Pieces[fromX, fromY]._player} {Pieces[fromX, fromY]._type} eats {Pieces[toX, toY]._player} {Pieces[toX, toY]._type}");
             }
-            Pieces[toX, toY]._player = Pieces[fromX, fromY]._player;
-            Pieces[toX, toY]._type = Pieces[fromX, fromY]._type;
             if (Pieces[toX, toY].IsCenter)
             {
                 if (CenterIsEmptyOrCurrentPlayer())
@@ -163,16 +162,21 @@ namespace EliteChess.Managers
                 {
                     foreach (var c in Centers)
                     {
-                        c._player = Player.None;
+                        if (c._player != Player.None)
+                        {
+                            c._player = Player.None;
+                        }
                     }
                 }
             }
+            Pieces[toX, toY]._player = Pieces[fromX, fromY]._player;
+            Pieces[toX, toY]._type = Pieces[fromX, fromY]._type;
             if (!Pieces[fromX, fromY].IsCenter)
             {
                 Pieces[fromX, fromY]._player = Player.None;
             }
             Pieces[fromX, fromY]._type = PieceType.None;
-            NowPlaying = NextTurnPlayer();
+            NextTurn();
         }
 
         private void SetCenterToPlayer()
@@ -213,26 +217,84 @@ namespace EliteChess.Managers
             }
         }
 
-        private Player NextTurnPlayer()
+        private void NextTurn()
         {
             Round++;
+            CloseBoarders();
             CalcScore();
+            NowPlaying = GetNextPlayer();
+        }
+
+        private Player GetNextPlayer()
+        {
+            Player newPlayer = Player.None;
+            foreach (var p in Pieces)
+            {
+                if (p._type != PieceType.None)
+                {
+                    break;
+                }
+                LogManager.Log("Game Over");
+                return newPlayer;
+            }
             switch (NowPlaying)
             {
                 case Player.None:
-                    return (Player)Random.Range(1, 5);
+                    newPlayer = (Player)Random.Range(1, 5);
+                    break;
                 case Player.Red:
-                    return Player.Blue;
+                    newPlayer = Player.Blue;
+                    break;
                 case Player.Blue:
-                    return Player.Green;
+                    newPlayer = Player.Green;
+                    break;
                 case Player.Green:
-                    return Player.Yellow;
+                    newPlayer = Player.Yellow;
+                    break;
                 case Player.Yellow:
-                    return Player.Red;
+                    newPlayer = Player.Red;
+                    break;
                 default:
                     LogManager.Log("cannot find next player...", LogType.Error);
-                    return (Player)Random.Range(1, 5);
+                    newPlayer = (Player)Random.Range(1, 5);
+                    break;
             }
+            foreach (var p in Pieces)
+            {
+                if (p._player == newPlayer && p._type != PieceType.None)
+                {
+                    return newPlayer;
+                }
+            }
+            LogManager.Log($"{newPlayer} is out of the game");
+            return GetNextPlayer();
+        }
+
+        private void CloseBoarders()
+        {
+            int startX = boardersPosition.Item1;
+            int startY = boardersPosition.Item2;
+            if (Round % BoarderTime == 0)
+            {
+                Pieces[startX, startY].IsBlocked = true;
+                for (int x = startX+1; x < 17-startX; x++)
+                {
+                    Pieces[x, startY].IsBlocked = true;
+                }
+                for (int y = startY + 1; y < 17 - startY; y++)
+                {
+                    Pieces[startX, y].IsBlocked = true;
+                }
+            }
+            foreach (var p in Pieces)
+            {
+                if (p.IsBlocked)
+                {
+                    p._player = Player.None;
+                    p._type = PieceType.None;
+                }
+            }
+            boardersPosition = new Tuple<int, int>(startX + 1, startY + 1);
         }
 
         private bool QueenCanMove(int fromX, int fromY, int toX, int toY)
@@ -373,7 +435,7 @@ namespace EliteChess.Managers
                 }
             }
             SetPlayers();
-            NowPlaying = NextTurnPlayer();
+            NextTurn();
             RefreshScreen();
         }
 

@@ -40,6 +40,7 @@ namespace EliteChess.Managers
             foreach (var c in Center)
             {
                 c.GetComponent<Image>().color = NeutralHalo;
+                c.GetComponentInChildren<Text>().color = Color.black;
             }
         }
 
@@ -62,6 +63,11 @@ namespace EliteChess.Managers
                     else
                     {
                         AllTiles[16 * i + j].GetComponentInChildren<Text>().text = string.Empty;
+                    }
+
+                    if (pieces[i, j].IsBlocked)
+                    {
+                        AllTiles[16 * i + j].GetComponent<Image>().color = Color.grey;
                     }
                 }
                 ChangeColor();
