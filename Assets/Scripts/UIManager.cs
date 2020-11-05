@@ -138,5 +138,17 @@ namespace EliteChess.Managers
             ScoreYellow.text = _scoreYellow.ToString();
             ScoreGreen.text = _scoreGreen.ToString();
         }
+
+        internal void ShowWinner(Player p)
+        {
+            if (p == Player.None)
+            {
+                UIText.text = "IT'S A TIE !";
+            }
+            else
+            {
+                UIText.text = $"{p.ToString().ToUpper()} IS THE WINNER !";
+            }
+        }
     }
 }

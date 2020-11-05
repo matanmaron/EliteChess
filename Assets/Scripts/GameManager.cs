@@ -26,8 +26,10 @@ namespace EliteChess.Managers
         int ScoreYellow = 0;
 
         int Round = 0;
+        bool IsGameOver = false;
 
         public static GameManager Instance { get; private set; } //singleton
+
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -40,8 +42,20 @@ namespace EliteChess.Managers
             }
         }
 
+        private void Update()
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
+
         internal void TileClicked(int pos_i, int pos_j)
         {
+            if (Pieces[pos_i,pos_j].IsBlocked)
+            {
+                return;
+            }
             LogManager.Log($"clicked ({pos_i},{pos_j})");
             if (Selected == null)
             {
@@ -249,21 +263,37 @@ namespace EliteChess.Managers
             Round++;
             CloseBoarders();
             NowPlaying = GetNextPlayer();
+            if (IsGameOver)
+            {
+                GameOver();
+                return;
+            }
             CalcScore();
         }
 
         private Player GetNextPlayer()
         {
+            var found = false;
             Player newPlayer = Player.None;
-            foreach (var p in Pieces)
+            Player p = Player.None;
+            foreach (var piece in Pieces)
             {
-                if (p._type != PieceType.None)
+                if (p == Player.None && piece._type != PieceType.None)
                 {
+                    p = piece._player;
+                }
+                else if(piece._type != PieceType.None && p != piece._player)
+                {
+                    found = true;
                     break;
                 }
-                LogManager.Log("Game Over");
-                return newPlayer;
             }
+            if (!found)
+            {
+                LogManager.Log("Game Over");
+                IsGameOver = true;
+                return newPlayer;
+            }    
             switch (NowPlaying)
             {
                 case Player.None:
@@ -286,15 +316,51 @@ namespace EliteChess.Managers
                     newPlayer = (Player)Random.Range(1, 5);
                     break;
             }
-            foreach (var p in Pieces)
+            foreach (var piece in Pieces)
             {
-                if (p._player == newPlayer && p._type != PieceType.None)
+                if (piece._player == newPlayer && piece._type != PieceType.None)
                 {
                     return newPlayer;
                 }
             }
             LogManager.Log($"{newPlayer} is out of the game");
+            NowPlaying = newPlayer;
             return GetNextPlayer();
+        }
+
+        private void GameOver()
+        {
+            foreach (var piece in Pieces)
+            {
+                piece.IsBlocked = true;
+            }
+            _UIManager.ShowWinner(GetWinner());
+        }
+
+        private Player GetWinner()
+        {
+            List<int> scores = new List<int>() { ScoreRed, ScoreBlue, ScoreYellow, ScoreGreen };
+            scores.Sort();
+            if (scores[3] > scores[2])
+            {
+                if (scores[3] == ScoreRed)
+                {
+                    return Player.Red;
+                }
+                else if (scores[3] == ScoreBlue)
+                {
+                    return Player.Blue;
+                }
+                else if (scores[3] == ScoreYellow)
+                {
+                    return Player.Yellow;
+                }
+                else if (scores[3] == ScoreGreen)
+                {
+                    return Player.Green;
+                }
+            }
+            return Player.None;
         }
 
         private void CloseBoarders()
@@ -304,14 +370,18 @@ namespace EliteChess.Managers
             if (Round % BoarderTime == 0)
             {
                 Pieces[startX, startY].IsBlocked = true;
-                for (int x = startX+1; x < 17-startX; x++)
+                Pieces[15-startX, 15-startY].IsBlocked = true;
+                for (int x = startX+1; x < 16-startX; x++)
                 {
                     Pieces[x, startY].IsBlocked = true;
+                    Pieces[x, 15-startY].IsBlocked = true;
                 }
-                for (int y = startY + 1; y < 17 - startY; y++)
+                for (int y = startY + 1; y < 16 - startY; y++)
                 {
                     Pieces[startX, y].IsBlocked = true;
+                    Pieces[15-startX, y].IsBlocked = true;
                 }
+                boardersPosition = new Tuple<int, int>(startX + 1, startY + 1);
             }
             foreach (var p in Pieces)
             {
@@ -321,7 +391,6 @@ namespace EliteChess.Managers
                     p._type = PieceType.None;
                 }
             }
-            boardersPosition = new Tuple<int, int>(startX + 1, startY + 1);
         }
 
         private bool QueenCanMove(int fromX, int fromY, int toX, int toY)
@@ -443,8 +512,11 @@ namespace EliteChess.Managers
         private void RefreshScreen()
         {
             _UIManager.RefreshBoard(Pieces, Selected);
-            _UIManager.RefreshUI(NowPlaying);
             _UIManager.RefreshScore(ScoreRed, ScoreBlue, ScoreYellow, ScoreGreen);
+            if (!IsGameOver)
+            {
+                _UIManager.RefreshUI(NowPlaying);
+            }
         }
 
         private void Start()
