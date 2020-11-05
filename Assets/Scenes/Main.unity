@@ -4063,6 +4063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _UIManager: {fileID: 1939717402}
+  BoarderTime: 5
 --- !u!1001 &223758979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31833,6 +31834,11 @@ MonoBehaviour:
   ScoreYellow: {fileID: 2142074151}
   ScoreGreen: {fileID: 66087498}
   UIText: {fileID: 5284440943584128360}
+  None: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  Bishop: {fileID: 21300000, guid: fe09a7b0c9489204c92f9272e58dc811, type: 3}
+  Knight: {fileID: 21300000, guid: c5854ba52d19f954ba6aaa16f77c6738, type: 3}
+  Rook: {fileID: 21300000, guid: da5c6c66b6f7f8345bfca25fae055429, type: 3}
+  Queen: {fileID: 21300000, guid: b6cf955c8d48f8b4c85db929bab9328a, type: 3}
 --- !u!1001 &1939872081
 PrefabInstance:
   m_ObjectHideFlags: 0

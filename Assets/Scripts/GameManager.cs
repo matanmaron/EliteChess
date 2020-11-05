@@ -2,6 +2,7 @@
 using EliteChess.Enums;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -152,52 +153,78 @@ namespace EliteChess.Managers
             {
                 LogManager.Log($"{Pieces[fromX, fromY]._player} {Pieces[fromX, fromY]._type} eats {Pieces[toX, toY]._player} {Pieces[toX, toY]._type}");
             }
-            if (Pieces[toX, toY].IsCenter)
-            {
-                if (CenterIsEmptyOrCurrentPlayer())
-                {
-                    SetCenterToPlayer();
-                }
-                else
-                {
-                    foreach (var c in Centers)
-                    {
-                        if (c._player != Player.None)
-                        {
-                            c._player = Player.None;
-                        }
-                    }
-                }
-            }
             Pieces[toX, toY]._player = Pieces[fromX, fromY]._player;
             Pieces[toX, toY]._type = Pieces[fromX, fromY]._type;
-            if (!Pieces[fromX, fromY].IsCenter)
-            {
-                Pieces[fromX, fromY]._player = Player.None;
-            }
+            Pieces[fromX, fromY]._player = Player.None;
             Pieces[fromX, fromY]._type = PieceType.None;
+            if (Pieces[toX, toY].IsCenter)
+            {
+                if (IsEmptyOrMine())
+                {
+                    SetCenterToPlayer(NowPlaying);
+                }
+            }
+            CheckCenterState();
             NextTurn();
         }
 
-        private void SetCenterToPlayer()
+        private void CheckCenterState()
         {
+            Player p = Player.None;
             foreach (var c in Centers)
             {
-                c._player = NowPlaying;
+                if (c._player != Player.None && p == Player.None)
+                {
+                    p = c._player;
+                }
+                else if (p != Player.None && p != c._player)
+                {
+                    foreach (var cent in Centers)
+                    {
+                        if (cent._type == PieceType.None)
+                        {
+                            cent._player = Player.None;
+                        }
+                    }
+                    return;
+                }
+            }
+            if (p != Player.None)
+            {
+                SetCenterToPlayer(p);
             }
         }
 
-        private bool CenterIsEmptyOrCurrentPlayer()
+        private void SetCenterToPlayer(Player p)
         {
-            if (Centers.Count(x => x._player == NowPlaying) == Centers.Count())
+            foreach (var c in Centers)
             {
-                return true;
+                c._player = p;
             }
-            return Centers.Count(x => x._player == Player.None) == Centers.Count();
+        }
+
+        private bool IsEmptyOrMine()
+        {
+            foreach (var c in Centers)
+            {
+                if (c._player != NowPlaying && c._player != Player.None)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private void CalcScore()
         {
+            var p = Centers.First()._player;
+            foreach (var c in Centers)
+            {
+                if (c._player != p)
+                {
+                    return;
+                }
+            }
             switch (Centers.First()._player)
             {
                 case Player.Red:
@@ -221,8 +248,8 @@ namespace EliteChess.Managers
         {
             Round++;
             CloseBoarders();
-            CalcScore();
             NowPlaying = GetNextPlayer();
+            CalcScore();
         }
 
         private Player GetNextPlayer()
