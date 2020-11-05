@@ -4063,7 +4063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _UIManager: {fileID: 1939717402}
-  BoarderTime: 5
+  BoarderTime: 15
 --- !u!1001 &223758979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31565,8 +31565,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NeutralHalo: {r: 1, g: 1, b: 1, a: 1}
-  RedHalo: {r: 1, g: 0, b: 0, a: 1}
-  BlueHalo: {r: 0, g: 0, b: 1, a: 1}
   Center:
   - {fileID: 980749987}
   - {fileID: 65021888}
