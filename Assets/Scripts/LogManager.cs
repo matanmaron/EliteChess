@@ -39,10 +39,12 @@ namespace EliteChess.Managers
                         break;
                 }
             }
+#if !UNITY_WEBGL
             if (GameManager.Instance.settings == null || GameManager.Instance.settings.SaveDebug)
             {
                 File.AppendAllText($"{Application.dataPath}/{FileName}", output.ToString());
             }
+#endif
         }
     }
 }
