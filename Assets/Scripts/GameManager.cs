@@ -413,7 +413,7 @@ namespace EliteChess.Managers
 
         private bool IsBlocked(int fromX, int fromY, int toX, int toY)
         {
-            if (Pieces[fromX, fromY]._player == Pieces[toX, toY]._player)
+            if (Pieces[fromX, fromY]._player == Pieces[toX, toY]._player && Pieces[toX, toY]._type != PieceType.None)
             {
                 LogManager.Log($"{Pieces[toX, toY]._type} ({toX},{toY}) in the way!");
                 return true;
@@ -541,63 +541,63 @@ namespace EliteChess.Managers
         private void SetPlayers()
         {
             Pieces[0, 0]._player = Player.Red;
-            Pieces[0, 0]._type = PieceType.Queen;
             Pieces[0, 2]._player = Player.Red;
-            Pieces[0, 2]._type = PieceType.Rook;
             Pieces[2, 0]._player = Player.Red;
-            Pieces[2, 0]._type = PieceType.Rook;
             Pieces[1, 2]._player = Player.Red;
-            Pieces[1, 2]._type = PieceType.Bishop;
             Pieces[2, 1]._player = Player.Red;
-            Pieces[2, 1]._type = PieceType.Bishop;
             Pieces[1, 1]._player = Player.Red;
-            Pieces[1, 1]._type = PieceType.Knight;
             Pieces[2, 2]._player = Player.Red;
+            Pieces[0, 0]._type = PieceType.Queen;
+            Pieces[2, 0]._type = PieceType.Rook;
+            Pieces[1, 2]._type = PieceType.Rook;
+            Pieces[2, 1]._type = PieceType.Bishop;
+            Pieces[0, 2]._type = PieceType.Bishop;
+            Pieces[1, 1]._type = PieceType.Knight;
             Pieces[2, 2]._type = PieceType.Knight;
 
             Pieces[15, 15]._player = Player.Blue;
-            Pieces[15, 15]._type = PieceType.Queen;
             Pieces[13, 15]._player = Player.Blue;
-            Pieces[13, 15]._type = PieceType.Rook;
             Pieces[15, 13]._player = Player.Blue;
-            Pieces[15, 13]._type = PieceType.Rook;
             Pieces[13, 14]._player = Player.Blue;
-            Pieces[13, 14]._type = PieceType.Bishop;
             Pieces[14, 13]._player = Player.Blue;
-            Pieces[14, 13]._type = PieceType.Bishop;
             Pieces[14, 14]._player = Player.Blue;
-            Pieces[14, 14]._type = PieceType.Knight;
             Pieces[13, 13]._player = Player.Blue;
+            Pieces[15, 15]._type = PieceType.Queen;
+            Pieces[13, 15]._type = PieceType.Rook;
+            Pieces[14, 13]._type = PieceType.Rook;
+            Pieces[15, 13]._type = PieceType.Bishop;
+            Pieces[13, 14]._type = PieceType.Bishop;
+            Pieces[14, 14]._type = PieceType.Knight;
             Pieces[13, 13]._type = PieceType.Knight;
 
             Pieces[0, 15]._player = Player.Yellow;
-            Pieces[0, 15]._type = PieceType.Queen;
             Pieces[2, 15]._player = Player.Yellow;
-            Pieces[2, 15]._type = PieceType.Rook;
             Pieces[0, 13]._player = Player.Yellow;
-            Pieces[0, 13]._type = PieceType.Rook;
             Pieces[2, 14]._player = Player.Yellow;
-            Pieces[2, 14]._type = PieceType.Bishop;
             Pieces[1, 13]._player = Player.Yellow;
-            Pieces[1, 13]._type = PieceType.Bishop;
             Pieces[1, 14]._player = Player.Yellow;
-            Pieces[1, 14]._type = PieceType.Knight;
             Pieces[2, 13]._player = Player.Yellow;
+            Pieces[0, 15]._type = PieceType.Queen;
+            Pieces[2, 15]._type = PieceType.Rook;
+            Pieces[1, 13]._type = PieceType.Rook;
+            Pieces[0, 13]._type = PieceType.Bishop;
+            Pieces[2, 14]._type = PieceType.Bishop;
+            Pieces[1, 14]._type = PieceType.Knight;
             Pieces[2, 13]._type = PieceType.Knight;
 
             Pieces[15, 0]._player = Player.Green;
-            Pieces[15, 0]._type = PieceType.Queen;
             Pieces[13, 0]._player = Player.Green;
-            Pieces[13, 0]._type = PieceType.Rook;
             Pieces[15, 2]._player = Player.Green;
-            Pieces[15, 2]._type = PieceType.Rook;
             Pieces[13, 1]._player = Player.Green;
-            Pieces[13, 1]._type = PieceType.Bishop;
             Pieces[14, 2]._player = Player.Green;
-            Pieces[14, 2]._type = PieceType.Bishop;
             Pieces[14, 1]._player = Player.Green;
-            Pieces[14, 1]._type = PieceType.Knight;
             Pieces[13, 2]._player = Player.Green;
+            Pieces[15, 0]._type = PieceType.Queen;
+            Pieces[13, 0]._type = PieceType.Rook;
+            Pieces[14, 2]._type = PieceType.Rook;
+            Pieces[13, 1]._type = PieceType.Bishop;
+            Pieces[15, 2]._type = PieceType.Bishop;
+            Pieces[14, 1]._type = PieceType.Knight;
             Pieces[13, 2]._type = PieceType.Knight;
 
             Pieces[7, 7].IsCenter = true;
