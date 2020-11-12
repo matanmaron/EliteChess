@@ -13,12 +13,9 @@ namespace EliteChess.Managers
         [SerializeField] Color NeutralHalo = Color.white;
         
         [SerializeField] List<GameObject> AllTiles = null;
-
-        [SerializeField] Text ScoreRed = null;
-        [SerializeField] Text ScoreBlue = null;
-        [SerializeField] Text ScoreYellow = null;
-        [SerializeField] Text ScoreGreen = null;
         [SerializeField] Text UIText = null;
+        [SerializeField] Text BoarderText = null;
+        [SerializeField] Text LogText = null;
 
         [SerializeField] Sprite None = null;
         [SerializeField] Sprite Bishop = null;
@@ -59,11 +56,6 @@ namespace EliteChess.Managers
                     {
                         AllTiles[16 * i + j].GetComponent<Image>().color = Color.grey;
                     }
-
-                    if (pieces[i, j].IsCenter)
-                    {
-                        AllTiles[16 * i + j].GetComponent<Image>().color = GetPlayerColor(pieces[i, j]._player);
-                    }
                 }
                 ChangeColor();
             }
@@ -71,6 +63,11 @@ namespace EliteChess.Managers
             {
                 AllTiles[16 * selected.Item1 + selected.Item2].GetComponent<Image>().color = Color.magenta;
             }
+        }
+
+        internal void ShowLog(string str)
+        {
+            LogText.text = str;
         }
 
         private Color ChangeColor()
@@ -130,14 +127,6 @@ namespace EliteChess.Managers
             UIText.text = $"Turn: {nowPlaying}";
         }
 
-        internal void RefreshScore(int _scoreRed, int _scoreBlue, int _scoreYellow, int _scoreGreen)
-        {
-            ScoreRed.text = _scoreRed.ToString();
-            ScoreBlue.text = _scoreBlue.ToString();
-            ScoreYellow.text = _scoreYellow.ToString();
-            ScoreGreen.text = _scoreGreen.ToString();
-        }
-
         internal void ShowWinner(Player p)
         {
             if (p == Player.None)
@@ -148,6 +137,11 @@ namespace EliteChess.Managers
             {
                 UIText.text = $"{p.ToString().ToUpper()} IS THE WINNER !";
             }
+        }
+
+        internal void ShowBoarderTime(int round, int boarderTime)
+        {
+            BoarderText.text = $"Boarders Closing in: {boarderTime - (round % boarderTime)}";
         }
     }
 }

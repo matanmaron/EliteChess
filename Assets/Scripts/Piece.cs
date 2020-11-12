@@ -7,7 +7,6 @@ namespace EliteChess.Entities
     {
         public Player _player;
         public PieceType _type;
-        public bool IsCenter = false;
         public bool IsBlocked = false;
 
         public Piece(Player player, PieceType type)

@@ -39,6 +39,7 @@ namespace EliteChess.Managers
                         break;
                 }
             }
+            GameManager.Instance.ShowLog(str);
 #if !UNITY_WEBGL
             if (GameManager.Instance.settings == null || GameManager.Instance.settings.SaveDebug)
             {

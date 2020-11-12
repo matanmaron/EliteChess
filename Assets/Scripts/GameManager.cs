@@ -15,7 +15,6 @@ namespace EliteChess.Managers
         [SerializeField] int BoarderTime = 5;
         internal Settings settings = null;
         Piece[,] Pieces = new Piece[16, 16];
-        List<Piece> Centers = new List<Piece>();
         Tuple<int, int> Selected = null;
         Tuple<int, int> boardersPosition = new Tuple<int, int>(0,0);
         Player NowPlaying = Player.None;
@@ -71,6 +70,11 @@ namespace EliteChess.Managers
                 Selected = null;
             }
             RefreshScreen();
+        }
+
+        internal void ShowLog(string str)
+        {
+            _UIManager.ShowLog(str);
         }
 
         private void MovePiece(Piece piece, int fromX, int fromY, int toX, int toY)
@@ -171,91 +175,7 @@ namespace EliteChess.Managers
             Pieces[toX, toY]._type = Pieces[fromX, fromY]._type;
             Pieces[fromX, fromY]._player = Player.None;
             Pieces[fromX, fromY]._type = PieceType.None;
-            if (Pieces[toX, toY].IsCenter)
-            {
-                if (IsEmptyOrMine())
-                {
-                    SetCenterToPlayer(NowPlaying);
-                }
-            }
-            CheckCenterState();
             NextTurn();
-        }
-
-        private void CheckCenterState()
-        {
-            Player p = Player.None;
-            foreach (var c in Centers)
-            {
-                if (c._player != Player.None && p == Player.None)
-                {
-                    p = c._player;
-                }
-                else if (p != Player.None && p != c._player)
-                {
-                    foreach (var cent in Centers)
-                    {
-                        if (cent._type == PieceType.None)
-                        {
-                            cent._player = Player.None;
-                        }
-                    }
-                    return;
-                }
-            }
-            if (p != Player.None)
-            {
-                SetCenterToPlayer(p);
-            }
-        }
-
-        private void SetCenterToPlayer(Player p)
-        {
-            foreach (var c in Centers)
-            {
-                c._player = p;
-            }
-        }
-
-        private bool IsEmptyOrMine()
-        {
-            foreach (var c in Centers)
-            {
-                if (c._player != NowPlaying && c._player != Player.None)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private void CalcScore()
-        {
-            var p = Centers.First()._player;
-            foreach (var c in Centers)
-            {
-                if (c._player != p)
-                {
-                    return;
-                }
-            }
-            switch (Centers.First()._player)
-            {
-                case Player.Red:
-                    ScoreRed++;
-                    break;
-                case Player.Blue:
-                    ScoreBlue++;
-                    break;
-                case Player.Green:
-                    ScoreGreen++;
-                    break;
-                case Player.Yellow:
-                    ScoreYellow++;
-                    break;
-                default:
-                    break;
-            }
         }
 
         private void NextTurn()
@@ -268,7 +188,6 @@ namespace EliteChess.Managers
                 GameOver();
                 return;
             }
-            CalcScore();
         }
 
         private Player GetNextPlayer()
@@ -367,6 +286,7 @@ namespace EliteChess.Managers
         {
             int startX = boardersPosition.Item1;
             int startY = boardersPosition.Item2;
+            _UIManager.ShowBoarderTime(Round, BoarderTime);
             if (Round % BoarderTime == 0)
             {
                 Pieces[startX, startY].IsBlocked = true;
@@ -512,7 +432,6 @@ namespace EliteChess.Managers
         private void RefreshScreen()
         {
             _UIManager.RefreshBoard(Pieces, Selected);
-            _UIManager.RefreshScore(ScoreRed, ScoreBlue, ScoreYellow, ScoreGreen);
             if (!IsGameOver)
             {
                 _UIManager.RefreshUI(NowPlaying);
@@ -599,15 +518,6 @@ namespace EliteChess.Managers
             Pieces[15, 2]._type = PieceType.Bishop;
             Pieces[14, 1]._type = PieceType.Knight;
             Pieces[13, 2]._type = PieceType.Knight;
-
-            Pieces[7, 7].IsCenter = true;
-            Pieces[7, 8].IsCenter = true;
-            Pieces[8, 7].IsCenter = true;
-            Pieces[8, 8].IsCenter = true;
-            Centers.Add(Pieces[7, 7]);
-            Centers.Add(Pieces[7, 8]);
-            Centers.Add(Pieces[8, 7]);
-            Centers.Add(Pieces[8, 8]);
         }
     }
 }
