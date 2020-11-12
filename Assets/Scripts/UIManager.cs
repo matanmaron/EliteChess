@@ -23,6 +23,9 @@ namespace EliteChess.Managers
         [SerializeField] Sprite Rook = null;
         [SerializeField] Sprite Queen = null;
 
+        [SerializeField] GameObject Menu = null;
+        [SerializeField] InputField BoarderTime = null;
+
         Color WhiteTile = new Color(1f, 0.80784313725f, 0.61960784313f);
         Color BlackTile = new Color(0.81960784313f, 0.54509803921f, 0.27843137254f);
         bool colorFlip = false;
@@ -139,9 +142,41 @@ namespace EliteChess.Managers
             }
         }
 
-        internal void ShowBoarderTime(int round, int boarderTime)
+        internal void ShowBoarderTime(int time)
         {
-            BoarderText.text = $"Boarders Closing in: {boarderTime - (round % boarderTime)}";
+            BoarderText.text = $"Boarders Closing in: {time}";
+        }
+
+        internal void ToggleMenu()
+        {
+            Menu.SetActive(!Menu.activeSelf);
+        }
+
+        public void OnQuitButton()
+        {
+            Application.Quit();
+        }
+
+        public void OnTwoPlayersButton()
+        {
+            GameManager.Instance.BootGame(2, int.Parse(BoarderTime.text));
+            Menu.SetActive(false);
+        }
+        public void OnThreePlayersButton()
+        {
+            GameManager.Instance.BootGame(3, int.Parse(BoarderTime.text));
+            Menu.SetActive(false);
+        }
+        public void OnFourPlayersButton()
+        {
+            GameManager.Instance.BootGame(4, int.Parse(BoarderTime.text));
+            Menu.SetActive(false);
+        }
+
+        internal void ShohwMenu(int boarderTime)
+        {
+            BoarderTime.text = boarderTime.ToString();
+            Menu.SetActive(true);
         }
     }
 }

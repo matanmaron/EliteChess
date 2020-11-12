@@ -12,20 +12,18 @@ namespace EliteChess.Managers
     public class GameManager : MonoBehaviour
     {
         [SerializeField] UIManager _UIManager;
-        [SerializeField] int BoarderTime = 5;
+        [SerializeField] AudioManger _AudioManager;
         internal Settings settings = null;
         Piece[,] Pieces = new Piece[16, 16];
         Tuple<int, int> Selected = null;
         Tuple<int, int> boardersPosition = new Tuple<int, int>(0,0);
         Player NowPlaying = Player.None;
 
-        int ScoreRed = 0;
-        int ScoreBlue = 0;
-        int ScoreGreen = 0;
-        int ScoreYellow = 0;
-
-        int Round = 0;
+        int players = 4;
+        int BoarderTime = 5;
+        int Round = -1;
         bool IsGameOver = false;
+        bool IsFirstLanch = true;
 
         public static GameManager Instance { get; private set; } //singleton
 
@@ -43,9 +41,12 @@ namespace EliteChess.Managers
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Application.Quit();
+                if (!IsFirstLanch)
+                {
+                    _UIManager.ToggleMenu();
+                }
             }
         }
 
@@ -169,7 +170,12 @@ namespace EliteChess.Managers
         {
             if (Pieces[toX,toY]._type != PieceType.None)
             {
+                _AudioManager.PlayEat();
                 LogManager.Log($"{Pieces[fromX, fromY]._player} {Pieces[fromX, fromY]._type} eats {Pieces[toX, toY]._player} {Pieces[toX, toY]._type}");
+            }
+            else
+            {
+                _AudioManager.PlayMove();
             }
             Pieces[toX, toY]._player = Pieces[fromX, fromY]._player;
             Pieces[toX, toY]._type = Pieces[fromX, fromY]._type;
@@ -211,7 +217,7 @@ namespace EliteChess.Managers
             {
                 LogManager.Log("Game Over");
                 IsGameOver = true;
-                return newPlayer;
+                return p;
             }    
             switch (NowPlaying)
             {
@@ -253,41 +259,15 @@ namespace EliteChess.Managers
             {
                 piece.IsBlocked = true;
             }
-            _UIManager.ShowWinner(GetWinner());
-        }
-
-        private Player GetWinner()
-        {
-            List<int> scores = new List<int>() { ScoreRed, ScoreBlue, ScoreYellow, ScoreGreen };
-            scores.Sort();
-            if (scores[3] > scores[2])
-            {
-                if (scores[3] == ScoreRed)
-                {
-                    return Player.Red;
-                }
-                else if (scores[3] == ScoreBlue)
-                {
-                    return Player.Blue;
-                }
-                else if (scores[3] == ScoreYellow)
-                {
-                    return Player.Yellow;
-                }
-                else if (scores[3] == ScoreGreen)
-                {
-                    return Player.Green;
-                }
-            }
-            return Player.None;
+            _UIManager.ShowWinner(NowPlaying);
         }
 
         private void CloseBoarders()
         {
             int startX = boardersPosition.Item1;
             int startY = boardersPosition.Item2;
-            _UIManager.ShowBoarderTime(Round, BoarderTime);
-            if (Round % BoarderTime == 0)
+            _UIManager.ShowBoarderTime(BoarderTime - (Round % BoarderTime));
+            if (Round!=0 && Round % BoarderTime == 0)
             {
                 Pieces[startX, startY].IsBlocked = true;
                 Pieces[15-startX, 15-startY].IsBlocked = true;
@@ -440,11 +420,14 @@ namespace EliteChess.Managers
 
         private void Start()
         {
-            BootGame();
+            _UIManager.ShohwMenu(BoarderTime);
         }
 
-        private void BootGame()
+        internal void BootGame(int _players, int _BoarderTime)
         {
+            IsFirstLanch = false;
+            players = _players;
+            BoarderTime = _BoarderTime * players;
             for (int i = 0; i < 16; i++)
             {
                 for (int j = 0; j < 16; j++)
@@ -489,35 +472,41 @@ namespace EliteChess.Managers
             Pieces[14, 14]._type = PieceType.Knight;
             Pieces[13, 13]._type = PieceType.Knight;
 
-            Pieces[0, 15]._player = Player.Yellow;
-            Pieces[2, 15]._player = Player.Yellow;
-            Pieces[0, 13]._player = Player.Yellow;
-            Pieces[2, 14]._player = Player.Yellow;
-            Pieces[1, 13]._player = Player.Yellow;
-            Pieces[1, 14]._player = Player.Yellow;
-            Pieces[2, 13]._player = Player.Yellow;
-            Pieces[0, 15]._type = PieceType.Queen;
-            Pieces[2, 15]._type = PieceType.Rook;
-            Pieces[1, 13]._type = PieceType.Rook;
-            Pieces[0, 13]._type = PieceType.Bishop;
-            Pieces[2, 14]._type = PieceType.Bishop;
-            Pieces[1, 14]._type = PieceType.Knight;
-            Pieces[2, 13]._type = PieceType.Knight;
+            if (players > 2)
+            {
+                Pieces[0, 15]._player = Player.Yellow;
+                Pieces[2, 15]._player = Player.Yellow;
+                Pieces[0, 13]._player = Player.Yellow;
+                Pieces[2, 14]._player = Player.Yellow;
+                Pieces[1, 13]._player = Player.Yellow;
+                Pieces[1, 14]._player = Player.Yellow;
+                Pieces[2, 13]._player = Player.Yellow;
+                Pieces[0, 15]._type = PieceType.Queen;
+                Pieces[2, 15]._type = PieceType.Rook;
+                Pieces[1, 13]._type = PieceType.Rook;
+                Pieces[0, 13]._type = PieceType.Bishop;
+                Pieces[2, 14]._type = PieceType.Bishop;
+                Pieces[1, 14]._type = PieceType.Knight;
+                Pieces[2, 13]._type = PieceType.Knight;
+            }
 
-            Pieces[15, 0]._player = Player.Green;
-            Pieces[13, 0]._player = Player.Green;
-            Pieces[15, 2]._player = Player.Green;
-            Pieces[13, 1]._player = Player.Green;
-            Pieces[14, 2]._player = Player.Green;
-            Pieces[14, 1]._player = Player.Green;
-            Pieces[13, 2]._player = Player.Green;
-            Pieces[15, 0]._type = PieceType.Queen;
-            Pieces[13, 0]._type = PieceType.Rook;
-            Pieces[14, 2]._type = PieceType.Rook;
-            Pieces[13, 1]._type = PieceType.Bishop;
-            Pieces[15, 2]._type = PieceType.Bishop;
-            Pieces[14, 1]._type = PieceType.Knight;
-            Pieces[13, 2]._type = PieceType.Knight;
+            if (players > 3)
+            {
+                Pieces[15, 0]._player = Player.Green;
+                Pieces[13, 0]._player = Player.Green;
+                Pieces[15, 2]._player = Player.Green;
+                Pieces[13, 1]._player = Player.Green;
+                Pieces[14, 2]._player = Player.Green;
+                Pieces[14, 1]._player = Player.Green;
+                Pieces[13, 2]._player = Player.Green;
+                Pieces[15, 0]._type = PieceType.Queen;
+                Pieces[13, 0]._type = PieceType.Rook;
+                Pieces[14, 2]._type = PieceType.Rook;
+                Pieces[13, 1]._type = PieceType.Bishop;
+                Pieces[15, 2]._type = PieceType.Bishop;
+                Pieces[14, 1]._type = PieceType.Knight;
+                Pieces[13, 2]._type = PieceType.Knight;
+            }
         }
     }
 }
