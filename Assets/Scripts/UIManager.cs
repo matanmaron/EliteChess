@@ -24,10 +24,11 @@ namespace EliteChess.Managers
         [SerializeField] Sprite Queen = null;
 
         [SerializeField] GameObject Menu = null;
+        [SerializeField] GameObject _Board = null;
         [SerializeField] InputField BoarderTime = null;
 
-        Color WhiteTile = new Color(1f, 0.80784313725f, 0.61960784313f);
-        Color BlackTile = new Color(0.81960784313f, 0.54509803921f, 0.27843137254f);
+        static readonly Color WhiteTile = new Color(1f, 0.80784313725f, 0.61960784313f);
+        static readonly Color BlackTile = new Color(0.81960784313f, 0.54509803921f, 0.27843137254f);
         bool colorFlip = false;
 
         private void Awake()
@@ -177,6 +178,11 @@ namespace EliteChess.Managers
         {
             BoarderTime.text = boarderTime.ToString();
             Menu.SetActive(true);
+        }
+
+        internal void ShowBoard(bool val)
+        {
+            _Board.SetActive(val);
         }
     }
 }

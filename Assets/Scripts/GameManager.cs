@@ -420,11 +420,13 @@ namespace EliteChess.Managers
 
         private void Start()
         {
+            _UIManager.ShowBoard(false);
             _UIManager.ShohwMenu(BoarderTime);
         }
 
         internal void BootGame(int _players, int _BoarderTime)
         {
+            _UIManager.ShowBoard(true);
             IsFirstLanch = false;
             players = _players;
             BoarderTime = _BoarderTime * players;
